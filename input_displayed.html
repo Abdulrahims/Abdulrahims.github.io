@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <body>
+
+  Name: <input type="text" id="input" value="Mickey">
+
+  <button onclick="myFunction()">Display</button>
+  <div id="test"></div>
+
+  <script>
+  function myFunction() {
+      var input = document.getElementById("input").value;
+      document.getElementById('test').innerHTML = input;
+  }
+  </script>
+
+  </body>
+</html>
+
+<!--
+<?php
+  $strhtml = '<!doctype html>';
+  $dochtml = new DOMDocument();
+  $dochtml -> loadHTML($strhtml);
+  $input = $dochtml->getElementById('input');
+  ?>
