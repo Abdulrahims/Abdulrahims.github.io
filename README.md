@@ -1,9 +1,15 @@
-# Abdulrahims.github.io
-HackNC project (Authors: Abdul Sheikhnureldin, Nadeen Saleh, Sydney Paul)
+# HackNC: Hate Rate
+###Authors: Nadeen Saleh, Abdul Sheikhnureldin, Sydney Paul
+Description: 
 
 ## Technologies Used
-1. HTML, CSS, JavaScript
-2. PHP
-3. curl
-4. IBM Watson
-5. Parse DB
+###Languages
+1. PHP
+2. HTML/CSS
+3. JavaScript
+
+###Frameworks
+1. Bootstrap
+
+###APIs
+1. IBM Watson™ Tone Analyzer API
