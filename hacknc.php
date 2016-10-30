@@ -66,7 +66,6 @@
 
       if (isset($_POST['submit']))
         {
-         	// Execute this code if the submit button is pressed.
          	$input = $_POST['input_value'];
 
         	include('Requests.php');
@@ -75,40 +74,29 @@
         	'Content-Type' => 'application/json'
         	);
         	$json = array('text' => $input);
-          	$json_data = json_encode($json);
+          $json_data = json_encode($json);
 
         	$options = array('auth' => array('604e4b67-8d17-4838-8011-ca147f3e2d85', 'E4oX5bHo0mZB'));
         	$response = Requests::post('https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19', $headers, $json_data, $options);
+          $response = json_encode($response);
+          $temp = json_decode($response, true);
 
-			echo "<script type='text/javascript'>
-			
-		
-			alert('submitted successfully!')
-			JSON.stringify(json_encode($json);
-						
-			
-			
-			</script>";
+          function GetBetween($content,$start,$end)
+          {
+              $r = explode($start, $content);
+              if (isset($r[1])){
+                  $r = explode($end, $r[1]);
+                  return $r[0];
+              }
+              return '';
+          }
 
-
-
-
-        	echo json_encode($response);
+         $body = (string) $temp["body"];
+         $first = '"tones":[';
+         $second = ']';
+         $json_body = GetBetween($body, $first, $second);
+         echo $json_body;
       }
-
-      // $gameScore = new ParseObject("GameScore");
-//       $gameScore->set("score", 1337);
-//       $gameScore->set("playerName", "Sean Plott");
-//       $gameScore->set("cheatMode", false);
-// 
-//       try {
-//         $gameScore->save();
-//         echo 'New object created with objectId: ' . $gameScore->getObjectId();
-//       } catch (ParseException $ex) {
-//         // Execute any logic that should take place if the save fails.
-//         // error is a ParseException object with an error code and message.
-//         echo 'Failed to create new object, with error message: ' . $ex->getMessage();
-      //}
       ?>
 
     </div>
