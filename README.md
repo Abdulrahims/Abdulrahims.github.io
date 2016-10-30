@@ -2,6 +2,7 @@
 ##Authors
 Abdul Sheikhnureldin, Nadeen Saleh and Sydney Paul
 
+##About Our App
 This web application aims to combat online cyberbullying and online harassment by analyzing the sentiment of inputed text and conversations in order to detect malicious messages. The categories include the following:
 * Anger
 * Sadness
