@@ -45,24 +45,24 @@
       </div>
 
       <?php
-      define('PARSE_SDK_DIR', 'parse-php-sdk-master/src/Parse/');
-      require_once('parse-php-sdk-master/autoload.php');
-      use Parse\ParseClient;
-      use Parse\ParseObject;
-      use Parse\ParseQuery;
-      use Parse\ParseACL;
-      use Parse\ParsePush;
-      use Parse\ParseUser;
-      use Parse\ParseInstallation;
-      use Parse\ParseException;
-      use Parse\ParseAnalytics;
-      use Parse\ParseFile;
-      use Parse\ParseCloud;
-      $app_id = 'euRwXEmFdqDBKtbNmMirSspAyY8Oq06sciSjQAwM';
-      $rest_key = 'pIhAES7l77sSvze1nUyI6esgWQPhnyeukWPOXCuN';
-      $master_key = 'QLgIktKAS7jifq7WvmXabMGIiBCz6hxVDUvIDvWy';
-      ParseClient::initialize($app_id, $rest_key, $master_key);
-      ParseClient::setServerURL('https://parseapi.back4app.com', '/');
+      // define('PARSE_SDK_DIR', 'parse-php-sdk-master/src/Parse/');
+//       require_once('parse-php-sdk-master/autoload.php');
+//       use Parse\ParseClient;
+//       use Parse\ParseObject;
+//       use Parse\ParseQuery;
+//       use Parse\ParseACL;
+//       use Parse\ParsePush;
+//       use Parse\ParseUser;
+//       use Parse\ParseInstallation;
+//       use Parse\ParseException;
+//       use Parse\ParseAnalytics;
+//       use Parse\ParseFile;
+//       use Parse\ParseCloud;
+//       $app_id = 'euRwXEmFdqDBKtbNmMirSspAyY8Oq06sciSjQAwM';
+//       $rest_key = 'pIhAES7l77sSvze1nUyI6esgWQPhnyeukWPOXCuN';
+//       $master_key = 'QLgIktKAS7jifq7WvmXabMGIiBCz6hxVDUvIDvWy';
+//       ParseClient::initialize($app_id, $rest_key, $master_key);
+//       ParseClient::setServerURL('https://parseapi.back4app.com', '/');
 
       if (isset($_POST['submit']))
         {
@@ -74,29 +74,41 @@
         	$headers = array(
         	'Content-Type' => 'application/json'
         	);
-        	$data = '{"text": "I hate you"}';
         	$json = array('text' => $input);
           	$json_data = json_encode($json);
 
         	$options = array('auth' => array('604e4b67-8d17-4838-8011-ca147f3e2d85', 'E4oX5bHo0mZB'));
         	$response = Requests::post('https://gateway.watsonplatform.net/tone-analyzer/api/v3/tone?version=2016-05-19', $headers, $json_data, $options);
 
+			echo "<script type='text/javascript'>
+			
+		
+			alert('submitted successfully!')
+			JSON.stringify(json_encode($json);
+						
+			
+			
+			</script>";
+
+
+
+
         	echo json_encode($response);
       }
 
-      $gameScore = new ParseObject("GameScore");
-      $gameScore->set("score", 1337);
-      $gameScore->set("playerName", "Sean Plott");
-      $gameScore->set("cheatMode", false);
-
-      try {
-        $gameScore->save();
-        echo 'New object created with objectId: ' . $gameScore->getObjectId();
-      } catch (ParseException $ex) {
-        // Execute any logic that should take place if the save fails.
-        // error is a ParseException object with an error code and message.
-        echo 'Failed to create new object, with error message: ' . $ex->getMessage();
-      }
+      // $gameScore = new ParseObject("GameScore");
+//       $gameScore->set("score", 1337);
+//       $gameScore->set("playerName", "Sean Plott");
+//       $gameScore->set("cheatMode", false);
+// 
+//       try {
+//         $gameScore->save();
+//         echo 'New object created with objectId: ' . $gameScore->getObjectId();
+//       } catch (ParseException $ex) {
+//         // Execute any logic that should take place if the save fails.
+//         // error is a ParseException object with an error code and message.
+//         echo 'Failed to create new object, with error message: ' . $ex->getMessage();
+      //}
       ?>
 
     </div>
