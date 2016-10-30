@@ -36,7 +36,7 @@
       <input class="btn btn-danger" type="submit" name="submit">-->
 
       <div class="row">
-        <div class="col-lg-6">
+        <div class="col-md-6">
           <div class="input-group">
             <input type="text" class="form-control" name ="input_value" id='chatinput' placeholder="I hate you.">
             <span class="input-group-btn">
@@ -44,13 +44,16 @@
             </span>
           </div>
         </div>
+        <div class="col-md-6">
+          <div class='printchatbox' id='printchatbox' style="font-family: 'Source Code Pro', monospace;"><?php echo $_POST['input_value']?></div>
+        </div>
       </div>
       <br>
-      <div class='printchatbox' id='printchatbox' style="font-family: 'Source Code Pro', monospace;"><?php echo $_POST['input_value']?></div>
+
     </div>
   </div>
 
-          
+
   <div id="viz"></div>
 
   <!-- load D3js -->
