@@ -100,6 +100,19 @@
      $sadness = json_encode($json_body_array[4]['score']);
 
      //echo $json_body[0];
+     
+    
+	require 'autoload.php';
+
+	$ml = new MonkeyLearn\Client('90371eb556920fd7e5cf6c5e29e6c800f7ae3ce2');
+	$text_list = array($json_data);
+	$module_id = 'cl_PowZgnKy';
+	$res = $ml->classifiers->classify($module_id, $text_list, true);
+	var_dump($res->result);
+
+     
+     
+     
   }
   ?>
 
@@ -131,19 +144,15 @@
       .size("value")         // key name to size bubbles
       .color("name")        // color by each group
       .draw()                // finally, draw the visualization!
+      
+      
+      
+      
+      
+      
   </script>
   
-  <?php
-
-	require 'autoload.php';
-
-	$ml = new MonkeyLearn\Client('90371eb556920fd7e5cf6c5e29e6c800f7ae3ce2');
-	$text_list = ["I hate you", "This is some more text"];
-	$module_id = 'cl_PowZgnKy';
-	$res = $ml->classifiers->classify($module_id, $text_list, true);
-	var_dump($res->result);
-
-?>
+ 
   
   
   
