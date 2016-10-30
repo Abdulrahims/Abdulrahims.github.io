@@ -45,7 +45,7 @@
           </div>
         </div>
         <div class="col-md-6">
-          <div class='printchatbox' id='printchatbox' style="font-family: 'Source Code Pro', monospace;"><?php echo $_POST['input_value']?></div>
+          <div class='printchatbox' id='printchatbox' style="font-family: 'Source Code Pro', monospace;"><?php if(isset($_POST['input_value'])){ echo $_POST['input_value'];} ?></div>
         </div>
       </div>
       <br>
