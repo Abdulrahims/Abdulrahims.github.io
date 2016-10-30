@@ -31,7 +31,7 @@
 
   <div class="container theme-showcase" role="main">
     <div class="jumbotron">
-      <form action="hacknc.php" method="POST">
+      <form action="index.php" method="POST">
       <!--<input type="text" name="input_value">
       <input class="btn btn-danger" type="submit" name="submit">-->
 
@@ -132,5 +132,20 @@
       .color("name")        // color by each group
       .draw()                // finally, draw the visualization!
   </script>
+  
+  <?php
+
+	require 'autoload.php';
+
+	$ml = new MonkeyLearn\Client('90371eb556920fd7e5cf6c5e29e6c800f7ae3ce2');
+	$text_list = ["I hate you", "This is some more text"];
+	$module_id = 'cl_PowZgnKy';
+	$res = $ml->classifiers->classify($module_id, $text_list, true);
+	var_dump($res->result);
+
+?>
+  
+  
+  
 
 </body>
