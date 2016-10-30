@@ -12,8 +12,9 @@
 2. HTML/CSS
 3. JavaScript
 
-### Frameworks
+### Frameworks/Libraries
 1. Bootstrap
+2. d3.js
 
 ### APIs
-1. IBM Watson™ Tone Analyzer API
+1. IBM Watson™ Tone Analyzer
